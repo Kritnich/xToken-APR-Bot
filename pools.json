@@ -1,0 +1,67 @@
+[
+  {
+    "name": "xAAVEa-WETH-AAVE LP",
+    "addr": "0xdeD9027b1080ecaD13645d099D879920e4229a73",
+    "asset": "xAAVEa - ETH - AAVE",
+    "type": 2
+  },
+  {
+    "name": "xAAVEb-WETH-AAVE LP",
+    "addr": "0xb9239B6B78EB6B50d095343C6bCF3bEfeFA4ca94",
+    "asset": "xAAVEb - ETH - AAVE",
+    "type": 2
+  },
+  {
+    "name": "xBNTa",
+    "addr": "0xd48036Db679050d257d9B04F65a20Da65E7F452D",
+    "type": 0
+  },
+  {
+    "name": "xKNCa-WETH LP",
+    "addr": "0xEfE1938DdA802aE4bEf602477C052b4646Bc526E",
+    "asset": "xKNCa<>ETH",
+    "type": 2
+  },
+  {
+    "name": "xKNCb",
+    "addr": "0x21c847054Ae7b1CE586D84a8B7BaB005A2f4DF21",
+    "type": 0
+  },
+  {
+    "name": "xINCHa",
+    "addr": "0xa19D1506271D8732E9c6c61058DbBe7Cad9a687f",
+    "type": 0
+  },
+  {
+    "name": "xINCHb",
+    "addr": "0x506DdA353411e443E1943d8da0FD5919A78F9813",
+    "type": 0
+  },
+  {
+    "name": "XTK-WETH LP",
+    "addr": "0x57c4dF90572dff9E9e3fb5DA28ae2Ba4153Ed2C4",
+    "asset": "",
+    "type": 2
+  },
+  {
+    "name": "xU3LPa",
+    "addr": "0xF73Df21f72CCb2cd32DCEf88CA3b6e9a42E9f029",
+    "type": 1
+  },
+  {
+    "name": "xU3LPb",
+    "addr": "0x1CEfd75b64Cdb08D1dDC732feFC1BC291d51Fa4A",
+    "type": 1
+  },
+  {
+    "name": "xU3LPc",
+    "addr": "0x23a1f13d0CC25AA5e3dF73cD117C277F37D0f299",
+    "type": 1
+  },
+  {
+    "name": "xSNXa-WETH LP",
+    "addr": "0x9AA731A7302117A16e008754A8254fEDE2C35f8D",
+    "asset": "xSNXa - ETH - SNX",
+    "type": 2
+  }
+]

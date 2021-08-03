@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@urql/core": "^2.1.5",
+    "@xtoken/abis": "^0.1.17",
+    "@xtoken/js": "^0.1.47",
+    "axios": "^0.21.1",
+    "discord.js": "^12.5.3",
+    "ethers": "5.0.30",
+    "graphql": "^15.5.1",
+    "node-fetch": "^2.6.1",
+    "node-schedule": "^2.0.0"
+  },
+  "main": "src/app.js"
+}
