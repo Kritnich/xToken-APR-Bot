@@ -6,7 +6,7 @@ const axios = require("axios");
 const urql = require("@urql/core");
 const fetch = require("node-fetch");
 
-const provider = require("./provider.js");
+const { provider } = require("./provider.js");
 const StakingRewardsAbi = require("./StakingRewards.json");
 const pools = require("../pools.json");
 const xtkAddr = "0x7f3edcdd180dbe4819bd98fee8929b5cedb3adeb";

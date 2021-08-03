@@ -21,11 +21,7 @@ bot.on("ready", async () => {
     const channel = await bot.channels.fetch(config.channel);
     const channelMessages = await channel.messages.fetch();
     const lastMessage = channelMessages.filter(m => m.author.id === bot.user.id).first();
-    try {
-      const embed = await createEmbed();
-    } catch (err) {
-      const embed = "There was a problem while trying to fetch the latest APRs. Please check the log.";
-    }
+    const embed = await createEmbed();
 
     if (lastMessage) {
       lastMessage.edit(embed);
