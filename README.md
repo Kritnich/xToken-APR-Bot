@@ -13,7 +13,7 @@ yarn install
 ```
 
 ## Requirements
-The bot needs to emulate a MetaMask wallet to use the [xToken/js](https://github.com/xtokenmarket/js) helpers, so it requires a connection to an Ethereum JSON RPC at least one account.
+The bot needs to emulate a MetaMask wallet to use the [xToken/js](https://github.com/xtokenmarket/js) helpers, so it requires a connection to an Ethereum JSON RPC with at least one account.
 
 By default it expects a locally running [geth](https://github.com/ethereum/go-ethereum) instance (light mode works) with a single random account and accessible API. To customize this, edit `provider.js`.
 
@@ -25,10 +25,12 @@ It can also take the configuration as the environment variables `XTK_BOT_TOKEN`,
 `pools.json` contains information about the incentivized pools, including their
 names and contract addresses. It can be extended when new pools are added.
 `type` refers to the type of staking token the pool holds:
- - `0` are simple xAssets
- - `1` are XLP assets (e.g. xU3LPa)
- - `2` are wETH-based LP tokens. For these, `asset` refers to the name of the LP
-   token.
+ - `0` are simple xAssets. `name` should resolve to a `symbol` returned by
+   `getXAssets()`
+ - `1` are XLP assets (e.g. xU3LPa). `name` should resolve to a `symbol`
+   returned by `getXLPAssets()`
+ - `2` are wETH-based LP tokens. `asset` should resolve to an `asset` returned
+   by `getLiquidityPoolsItems()`
 
 ## Usage
 Run inside the cloned repository:
