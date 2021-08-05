@@ -4,11 +4,10 @@
     "@xtoken/abis": "^0.1.17",
     "@xtoken/js": "^0.1.47",
     "axios": "^0.21.1",
-    "discord.js": "^12.5.3",
+    "discord.js": "^13.0.0-dev.t1628124537.3eb4140",
     "ethers": "5.0.30",
     "graphql": "^15.5.1",
-    "node-fetch": "^2.6.1",
-    "node-schedule": "^2.0.0"
+    "node-fetch": "^2.6.1"
   },
   "main": "src/app.js"
 }

@@ -1,37 +1,12 @@
-const Discord = require('discord.js');
-const schedule = require("node-schedule");
-
+const { WebhookClient } = require('discord.js');
 const createEmbed = require("./generator.js");
-const config = require("./config.js");
-const pools = require("../pools.json");
 
-const bot = new Discord.Client()
+const url = process.argv[2];
+const webhook = new WebhookClient({ url });
 
-bot.on("ready", async () => {
-
-  const channel = await bot.channels.fetch(config.channel);
-  
-  if (!channel.isText()) {
-    throw "Configured channel must be a text channel";
-    process.exit(1);
-  }
-
-  const aprStatusJob = schedule.scheduleJob(config.cron, async () => {
-    
-    const channel = await bot.channels.fetch(config.channel);
-    const channelMessages = await channel.messages.fetch();
-    const lastMessage = channelMessages.filter(m => m.author.id === bot.user.id).first();
-    const embed = await createEmbed();
-
-    if (lastMessage) {
-      lastMessage.edit(embed);
-    } else {
-      channel.send(embed);
-    }
-
+createEmbed().then(embed => {
+  webhook.send({
+    embeds: [embed]
   });
-
-  console.log(`Logged in as ${bot.user.tag}!`);
 });
 
-bot.login(config.botToken);
