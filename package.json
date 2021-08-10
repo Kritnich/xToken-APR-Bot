@@ -1,8 +1,8 @@
 {
   "dependencies": {
     "@urql/core": "^2.1.5",
-    "@xtoken/abis": "^0.1.17",
-    "@xtoken/js": "^0.1.47",
+    "@xtoken/abis": "^0.1.18",
+    "@xtoken/js": "^0.1.49",
     "axios": "^0.21.1",
     "discord.js": "^13.0.0-dev.t1628124537.3eb4140",
     "ethers": "5.0.30",

@@ -35,6 +35,7 @@ async function getPoolInfo(pool, xtkPrice, xAssets, xlpAssets, lpItems) {
 
   if (periodFinish < Date.now()) {
     // Incentive program has ended, no need to calculate anything
+    console.log(`Incentive period for ${pool.name} has ended, skipping`);
     return {
       apr: 0,
       periodFinish: periodFinish,
@@ -118,6 +119,10 @@ async function createEmbed() {
   const xAssets = await xtoken.getXAssets();
   const xlpAssets = await xtoken.getXLPAssets();
   const lpItems = await xtoken.getLiquidityPoolItems();
+
+  console.table(xAssets);
+  console.table(xlpAssets);
+  console.table(lpItems);
 
   for (const pool of pools) {
     const { apr, periodFinish, active } = await getPoolInfo(pool, xtkPrice, xAssets, xlpAssets, lpItems);

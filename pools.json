@@ -59,6 +59,31 @@
     "type": 1
   },
   {
+    "name": "xU3LPd",
+    "addr": "0xb11e9a4F3fEc9cC88d9B1Fcca4098DdcdAF4CF29",
+    "type": 1
+  },
+  {
+    "name": "xU3LPe",
+    "addr": "0x20574BEd55DdF3833bB8bEC1527488c7edb6e388",
+    "type": 1
+  },
+  {
+    "name": "xU3LPf",
+    "addr": "0xD4da964B623eC3a71e3DAd6c07E1d8205aF287CD",
+    "type": 1
+  },
+  {
+    "name": "xU3LPg",
+    "addr": "0xb1A194b369a0B3B5dD964C5eE2f17500E88b6421",
+    "type": 1
+  },
+  {
+    "name": "xU3LPh",
+    "addr": "0xE732e5b90EdcC3cE708635243df85981942eae3B",
+    "type": 1
+  },
+  {
     "name": "xSNXa-WETH LP",
     "addr": "0x9AA731A7302117A16e008754A8254fEDE2C35f8D",
     "asset": "xSNXa - ETH - SNX",
