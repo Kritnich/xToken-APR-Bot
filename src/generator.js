@@ -37,6 +37,7 @@ async function getPoolInfo(pool, xtkPrice, xAssets, xlpAssets, lpItems) {
     // Incentive program has ended, no need to calculate anything
     console.log(`Incentive period for ${pool.name} has ended, skipping`);
     return {
+      name: "",
       apr: 0,
       periodFinish: periodFinish,
       active: false
@@ -62,20 +63,25 @@ async function getPoolInfo(pool, xtkPrice, xAssets, xlpAssets, lpItems) {
       .div(totalSupply)
       .mul(DEC_18);
 
+    var name = pool.name;
+
   } else {
 
     switch (pool.type) {
       case 0:
         // Single asset (e.g. xBNTa, xKNCb)
         var { price } = xAssets.find(asset => asset.symbol === pool.name);
+        var name = pool.name;
         break; 
       case 1:
         // XLPAssets (e.g. xU3LPa, xU3LPb)
-        var { price } = xlpAssets.find(asset => asset.symbol === pool.name);
+        var { price, assets } = xlpAssets.find(asset => asset.symbol === pool.name);
+        var name = `${pool.name} (${assets})`;
         break;
       case 2:
         // wETH LP (e.g. xSNXa-ETH)
         var price = lpItems.find(item => item.asset === pool.asset).poolPrice;
+        var name = pool.name;
         break;
     }
 
@@ -96,6 +102,7 @@ async function getPoolInfo(pool, xtkPrice, xAssets, xlpAssets, lpItems) {
   const apr = usdPerYear.div(totalUsdValue);
 
   return {
+    name: name,
     apr: apr,
     periodFinish: periodFinish,
     active: true
@@ -125,7 +132,7 @@ async function createEmbed() {
   console.table(lpItems);
 
   for (const pool of pools) {
-    const { apr, periodFinish, active } = await getPoolInfo(pool, xtkPrice, xAssets, xlpAssets, lpItems);
+    const { name, apr, periodFinish, active } = await getPoolInfo(pool, xtkPrice, xAssets, xlpAssets, lpItems);
 
     if (active) {
       const endDate = new Intl.DateTimeFormat('en-US', {
@@ -134,7 +141,7 @@ async function createEmbed() {
         "month": "short",
         "day": "numeric"
       }).format(new Date(periodFinish));
-      embed.addField(pool.name, `${apr}% (until ${endDate})`);
+      embed.addField(name, `${apr}% (until ${endDate})`);
     }
   }
 
